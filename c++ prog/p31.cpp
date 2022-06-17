@@ -1,0 +1,173 @@
+//           // ****** --------------> Inheritance  (public -> public)  (1)
+
+// #include <iostream>
+// #include <conio.h>
+// using namespace std;
+
+// // Base Class
+// class Employee
+// {
+// public:
+//     int id;
+//     float salary;
+//     Employee(int inpId)
+//     {
+//         id =  inpId;
+//         salary = 34.60;
+//     }
+//     Employee() {}    //---------->    Default constructor
+// };
+
+// // Creating a Programmer class derived from Employee Base class
+// class Programmer : public Employee
+// {
+// public:
+//     int languageCode;
+//     Programmer(int inpId)
+//     {
+//         id = inpId;
+//         languageCode = 9;
+//      }
+//     // void getData(){
+//     //     cout << id <<endl;
+//     // }
+//     // }
+// };
+
+// int main() {
+
+//     Employee harry(1), AK(2);
+//     cout << "Salary of harry is : "<< harry.salary << endl;
+//     cout << "Salary of AK is : " << AK.salary << endl;
+//     Programmer skillF (5);
+//     cout << skillF.languageCode<<endl;
+//     cout << skillF.id<<endl;
+//     // skillF.getData();
+    
+// getch();
+// return 0;
+
+// }.....................end.............................................
+
+
+
+// ****** -------------->     Inheritance  (private & public -> public)    (2)
+// #include <iostream>
+// #include <conio.h>
+// using namespace std;
+// class Base
+// {
+//     int data1; // private by default and is not inheritable
+// public:
+//     int data2;
+//     void setData();
+//     int getData1();
+//     // int getData2();
+// };
+
+// void Base ::setData(void)
+// {
+//     data1 = 4;
+//     data2 = 6;
+// }
+
+// int Base::getData1()
+// {
+//     return data1;
+// }
+
+// // int Base::getData2()
+// // {
+// //     return data2;
+// // }
+
+// class Derived : public Base   // Class is being derived publically
+// {
+// int data3;
+
+// public:
+//     void process();
+//     void display();
+// };
+
+// void Derived ::process()
+// {
+//     data3 = data2 * getData1();
+// }
+
+// void Derived ::display()
+// {
+//     cout << "Value of data 1 is " << getData1() << endl;
+//     cout << "Value of data 2 is " << data2 << endl;
+//     cout << "Value of data 3 is " << data3 << endl;
+// }
+
+// int main()
+// {
+//     Derived der;
+//     der.setData();
+//     der.process();
+//     der.display();
+
+//     return 0;
+// }//.......................end........................
+
+
+
+// ****** -------------->    Inheritance  (private & public -> private)    (3) 
+#include <iostream>
+#include <conio.h>
+using namespace std;
+class Base
+{
+    int data1; // private by default and is not inheritable
+public:
+    int data2;
+    void setData();
+    int getData1();
+   
+};
+
+void Base ::setData(void)
+{
+    data1 = 4;
+    data2 = 3;
+}
+
+int Base::getData1() // to get the data 1
+{
+    return data1;
+}
+
+
+class Derived : private Base   // Class is being derived publically
+{
+int data3;
+
+public:
+    void process();
+    void display();
+};
+
+void Derived ::process()
+{
+    setData(); 
+    data3 = data2 * getData1();
+}
+
+void Derived ::display()
+{
+    cout << "Value of data 1 is " << getData1() << endl;
+    cout << "Value of data 2 is " << data2 << endl;
+    cout << "Value of data 3 is " << data3 << endl;
+}
+
+int main()
+{
+    Derived der;
+    // der.setData();
+    der.process();
+    der.display();
+
+    return 0;
+}
