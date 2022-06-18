@@ -13,10 +13,11 @@
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "clang-x86"
         }
     ],
     "version": 4
 }
  // ${workspaceFolder}/**
- // clang-x86 windows-msvc-x64
+ // "intelliSenseMode" (1)clang-x86   
+//                     (2)windows-msvc-x64
